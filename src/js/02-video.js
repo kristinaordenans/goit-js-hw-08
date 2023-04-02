@@ -9,7 +9,7 @@ player.getVideoTitle().then((title) => {
 });
 
 const timeStorage = "videoplayer-current-time";
-const currentTime = localStorage.getItem(timeStorage);
+const currentTime = localStorage.getItem(timeStorage) ? localStorage.getItem(timeStorage):null;
 
 player.setCurrentTime(currentTime);
 
