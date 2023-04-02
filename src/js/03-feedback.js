@@ -24,9 +24,12 @@ if(parseDataFromLocalStorage) {
     messageInputEl.value = parseDataFromLocalStorage[messageInputEl.name];
 }
 
+feedbackData.email = emailInputEl ? emailInputEl.value : ``;
+feedbackData.message = messageInputEl ? messageInputEl.value : ``;
+
 formEl.addEventListener('submit', e => {
-    e.preventDefault();
     if (emailInputEl.value !== '' && messageInputEl.value !== '') {
+        e.preventDefault();
         console.log(feedbackData);
         localStorage.removeItem(FEEDBACK_KAY);
         e.target.reset();
@@ -35,3 +38,4 @@ formEl.addEventListener('submit', e => {
     }
     alert('All fields');
 });
+
