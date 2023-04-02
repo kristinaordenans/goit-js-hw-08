@@ -9,12 +9,16 @@ player.getVideoTitle().then((title) => {
 });
 
 const timeStorage = "videoplayer-current-time";
-const currentTime = localStorage.getItem(timeStorage) ? localStorage.getItem(timeStorage):null;
+const currentTime = localStorage.getItem(timeStorage);
+    
+if (currentTime !== 0) {
+    player.setCurrentTime(currentTime);
+};
 
-player.setCurrentTime(currentTime);
 
 function getCurrentTime(e) {
     localStorage.setItem(timeStorage, e.seconds)
-}
+};
 
 player.on('timeupdate', throttle(getCurrentTime, 1000));
+
