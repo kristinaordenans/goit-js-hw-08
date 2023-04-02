@@ -5,7 +5,7 @@ const FEEDBACK_KAY = "feedback-form-state";
 
 let feedbackData = {};
 
-const emailInputEl = document.querySelector('.feedback-form iput');
+const emailInputEl = document.querySelector('.feedback-form input');
 const messageInputEl = document.querySelector('.feedback-form textarea');
 
 
@@ -27,7 +27,7 @@ formEl.addEventListener('submit', e => {
     alert('All fields');
 });
 
-function fillForm() {
+function fillForm () {
     const savedEl = localStorage.getItem(FEEDBACK_KAY);
     if (savedEl) {
         feedbackData = JSON.parse(savedEl);
