@@ -3,7 +3,7 @@ import throttle from 'lodash.throttle';
 const formEl = document.querySelector('.feedback-form');
 const FEEDBACK_KAY = "feedback-form-state";
 
-let feedbackData = {};
+const feedbackData = {};
 
 const emailInputEl = document.querySelector('.feedback-form input');
 const messageInputEl = document.querySelector('.feedback-form textarea');
